@@ -1,12 +1,16 @@
-version: '3.8'
+version: "3.8"
 
 services:
-   broad-covid19-dashboard:
-     image: covid-dashboard:latest
-     ports:
-        - "8080:80"
+  broad-covid19-dashboard:
+    image: covid-dashboard:latest
+    ports:
+      - "8080:80"
+    deploy:
+      mode: global # this will deploy service automatically on all nodes
 
-   nhs-covid19-registration-form:
-     image: covid-form:latest
-     ports:
-       - "5000:5000"
+  nhs-covid19-registration-form:
+    image: covid-form:latest
+    ports:
+      - "5000:5000"
+    deploy:
+      mode: global # this will deploy service automatically on all nodes
